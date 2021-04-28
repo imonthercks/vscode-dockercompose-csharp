@@ -1,3 +1,13 @@
+# Dev Container Definition
+
+https://github.com/microsoft/vscode-dev-containers/tree/master/container-templates/docker-compose
+
+https://github.com/Microsoft/vscode-remote-try-dotnetcore
+
+
+
+
+
 # [Name of Definition Here] (Community)
 
 ## Summary
