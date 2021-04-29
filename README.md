@@ -6,6 +6,10 @@ https://github.com/Microsoft/vscode-remote-try-dotnetcore
 
 
 
+# Create API
+
+```
+dotnet new sln -o DotNetCoreSampleApi
 
 
 # [Name of Definition Here] (Community)
