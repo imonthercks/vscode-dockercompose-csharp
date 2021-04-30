@@ -9,7 +9,9 @@ services:
       # [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the image in the Dockerfile
       args: 
         VARIANT: "3.1"
-
+    depends_on:
+      - goaws
+      - dynamodb-local
     volumes:
       # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
       - ..:/workspace:cached
@@ -42,4 +44,9 @@ services:
     restart: unless-stopped
     network_mode: host
 
-    # As in the "app" service, use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+  # Adds In-Memory local DynamoDB database
+  dynamodb-local:
+    command: "-jar DynamoDBLocal.jar -sharedDb -inMemory"
+    image: "amazon/dynamodb-local:latest"
+    working_dir: /home/dynamodblocal
+    network_mode: host
